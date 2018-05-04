@@ -1,4 +1,8 @@
 module.exports = {
+  modules: [
+    '@nuxtjs/bulma',
+    '@nuxtjs/font-awesome'
+  ],
   /*
   ** Headers of the page
   */
@@ -21,6 +25,13 @@ module.exports = {
   ** Add axios globally
   */
   build: {
+    postcss: {
+      plugins: {
+        'postcss-custom-properties': {
+          warnings: false
+        }
+      }
+    },
     vendor: ['axios'],
     /*
     ** Run ESLINT on save
